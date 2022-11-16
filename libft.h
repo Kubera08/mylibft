@@ -6,7 +6,7 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:26:01 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/16 12:58:04 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/16 13:25:59 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ char    *ft_itoa(int n);
 char *ft_strtrim(char const *s1, char const *set);
 void ft_striteri(char *s, void (*f)(unsigned int, char*));
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void ft_putchar_fd(char c, int fd)
+void ft_putchar_fd(char c, int fd);
+void ft_putstr_fd(char *s, int fd);
+void ft_putendl_fd(char *s, int fd);
+void ft_putnbr_fd(int n, int fd);
 
 #endif
