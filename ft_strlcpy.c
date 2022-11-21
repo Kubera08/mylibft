@@ -6,14 +6,14 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:59:42 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/16 11:55:37 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/21 12:44:02 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <stddef.h>
 
-int	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	int	i;
 	int	len;

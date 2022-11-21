@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 18:15:05 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/17 14:23:17 by abeaudui         ###   ########.fr       */
+/*   Created: 2022/11/18 15:00:00 by abeaudui          #+#    #+#             */
+/*   Updated: 2022/11/21 13:21:32 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#include <stddef.h>
-#include <stdlib.h>
-
-void * ft_calloc( size_t elementCount, size_t elementSize )
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
-    char *a;
-    size_t i;
-
-    i = 0;
-    if (elementCount  > 4294967295/elementCount)
-        return(NULL);
-
-    a = malloc(elementCount * elementSize);
-    if (a == NULL)
-        return(NULL);
-    while (i < (elementCount * elementSize))
-    {
-        a[i] = 0;
-        i++;
-    }
-    return(a);
+    if (*lst != NULL)
+        new -> next = *lst; // on assigne a next la valeur de new (une adresse) dans *lst qui correspond au premier element
+    *lst = new; // on definit le nouveau maillon comme le premier
 }

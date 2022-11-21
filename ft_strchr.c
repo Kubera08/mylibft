@@ -6,7 +6,7 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:26:45 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/16 11:48:32 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/21 12:46:51 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ char	*ft_strchr(const char *str, int c)
 	}
 	if (str[i] == '\0' && c == '\0')
 			return ((char *)&str[i]);
-	return ('\0');
+	return (NULL);
 }

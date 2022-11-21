@@ -5,27 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 13:22:28 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/16 13:32:45 by abeaudui         ###   ########.fr       */
+/*   Created: 2022/11/17 14:29:50 by abeaudui          #+#    #+#             */
+/*   Updated: 2022/11/17 15:06:54 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <unistd.h>
 #include "libft.h"
 
 void ft_putnbr_fd(int n, int fd)
 {
-    if ( n > 0 && n < 9)
-        ft_putchar(n, fd);
-    else if( n < 0)
+    unsigned int nb;
+    if (n < 0)
+    {   
+        ft_putchar_fd('-', fd);
+        n = n * - 1;
+    }
+    nb = n;
+    if(nb >= 10)
     {
-        ft_putchar_fd("-", fd);
-        n = n * -1;
+        ft_putnbr_fd(nb/10 ,fd);
+        ft_putnbr_fd(nb%10, fd);
     }
     else
-    {
-        ft_putnbr_fd(n / 10, fd);
-        ft_putnbr_fd(n % 10, fd);
-    }
+	ft_putchar_fd((nb + '0'), fd);
 }

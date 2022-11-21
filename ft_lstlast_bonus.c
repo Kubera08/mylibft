@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 18:15:05 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/17 14:23:17 by abeaudui         ###   ########.fr       */
+/*   Created: 2022/11/18 15:34:08 by abeaudui          #+#    #+#             */
+/*   Updated: 2022/11/21 13:59:48 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#include <stddef.h>
-#include <stdlib.h>
-
-void * ft_calloc( size_t elementCount, size_t elementSize )
+  
+t_list		*ft_lstlast(t_list *lst)
 {
-    char *a;
-    size_t i;
-
-    i = 0;
-    if (elementCount  > 4294967295/elementCount)
-        return(NULL);
-
-    a = malloc(elementCount * elementSize);
-    if (a == NULL)
-        return(NULL);
-    while (i < (elementCount * elementSize))
-    {
-        a[i] = 0;
-        i++;
-    }
-    return(a);
+	if (!lst)
+		return (0);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

@@ -6,13 +6,13 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:26:55 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/16 12:16:25 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/21 12:55:46 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int occurence (const char *str, int c) 
+static int occurence (const char *str, int c) 
 {
     int n;
     int i;
@@ -52,5 +52,5 @@ char *ft_strrchr(const char *str, int c)
     }
     if (str[i] == '\0' && c == '\0')
 			return ((char *)&str[i]);
-    return('\0');
+    return(NULL);
 }

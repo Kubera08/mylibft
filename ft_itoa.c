@@ -6,14 +6,14 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:16:47 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/16 11:35:29 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:06:00 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int ft_count(int n)
+static int ft_count(int n) // sert a trouver le nombre de chiffre dans le nombre n
 {
     int i;
 
@@ -28,7 +28,7 @@ int ft_count(int n)
     return(i);
 }
 
-int ft_fill(char *tab, int count, int i, long int longn)
+static int ft_fill(char *tab, int count, int i, long int longn)
 
 {
     if (longn < 0)
@@ -54,13 +54,12 @@ char    *ft_itoa(int n)
     int i;
     long int longn;
 
-    longn = n;
-    count = ft_count(longn);
+    longn = n; // on transforme notre int en long int
+    count = ft_count(longn); 
     i = 0;
-    if (longn < 0 || count == 0)
-		count++;
+    if (longn < 0 || count == 0) // on prevoit la place necessaire pour le "-""
+		count++; 
     tab = malloc(sizeof(char) * (count + 1));
-    
     if (!tab)
         return (NULL);
     ft_fill(tab, count, i, longn);

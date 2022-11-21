@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 18:15:05 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/17 14:23:17 by abeaudui         ###   ########.fr       */
+/*   Created: 2022/11/18 15:22:04 by abeaudui          #+#    #+#             */
+/*   Updated: 2022/11/21 13:33:05 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#include <stddef.h>
-#include <stdlib.h>
-
-void * ft_calloc( size_t elementCount, size_t elementSize )
+int ft_lstsize(t_list *lst)
 {
-    char *a;
     size_t i;
-
+    
     i = 0;
-    if (elementCount  > 4294967295/elementCount)
-        return(NULL);
-
-    a = malloc(elementCount * elementSize);
-    if (a == NULL)
-        return(NULL);
-    while (i < (elementCount * elementSize))
+    if (!lst)
+		return (0);
+    while (lst != NULL)
     {
-        a[i] = 0;
+        lst = lst -> next; // le pointeur vers le debut de la liste pointe sur l'adresse de l'elelent suivant, on passe a l'adresse suivante a chaque fois jusqu'a arriver a NULL
         i++;
     }
-    return(a);
+    return(i);
 }

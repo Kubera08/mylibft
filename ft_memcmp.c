@@ -12,6 +12,7 @@
 
 
 #include <stddef.h>
+
 int ft_memcmp( const void * pointer1, const void * pointer2, size_t size )
 {
         unsigned char	*bridge1;

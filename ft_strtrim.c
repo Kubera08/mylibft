@@ -6,7 +6,7 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:05:59 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/16 11:30:07 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:14:39 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-int ft_find(char c, char const *str)
+static int ft_find(char c, char const *str)
 {
     int i;
 

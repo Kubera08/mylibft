@@ -6,7 +6,7 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 19:17:13 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/13 13:18:56 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/21 12:51:10 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void * ft_memchr( const void * memoryBlock, int searchedChar, size_t size )
             return (&place[i]);    
     i++;
     }
-    return ('\0');
+    return (NULL);
 }
