@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 13:26:45 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/22 16:00:32 by abeaudui         ###   ########.fr       */
+/*   Created: 2022/11/23 16:10:58 by abeaudui          #+#    #+#             */
+/*   Updated: 2022/11/23 17:10:22 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	i;
+	t_list	*run;
 
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == (char)c)
-			return ((char *)&str[i]);
-		i++;
-	}
-	if (str[i] == '\0' && c == '\0')
-		return ((char *) &str[i]);
-	return (NULL);
+	run = lst;
+	while (run -> next != NULL)
+		run = run -> next;
+	run = malloc(sizeof(t_list));
+	run -> next = new;
+	new - next = NULL;
 }

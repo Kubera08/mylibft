@@ -6,9 +6,11 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:59:35 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/11 19:19:58 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:53:07 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

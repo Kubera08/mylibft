@@ -6,12 +6,12 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:10:05 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/13 13:35:03 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:18:18 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
+
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;

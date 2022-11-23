@@ -6,18 +6,18 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:59:44 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/11 15:31:34 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/23 17:05:51 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
-	{
+	while (s[i])
 		i++;
-	}
-	return (i);
+	return ((size_t)i);
 }

@@ -6,30 +6,27 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:15:05 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/17 14:23:17 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:09:22 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#include <stddef.h>
-#include <stdlib.h>
-
-void * ft_calloc( size_t elementCount, size_t elementSize )
+void	*ft_calloc(size_t elementCount, size_t elementSize)
 {
-    char *a;
-    size_t i;
+	char	*a;
+	size_t	i;
 
-    i = 0;
-    if (elementCount  > 4294967295/elementCount)
-        return(NULL);
-
-    a = malloc(elementCount * elementSize);
-    if (a == NULL)
-        return(NULL);
-    while (i < (elementCount * elementSize))
-    {
-        a[i] = 0;
-        i++;
-    }
-    return(a);
+	i = 0;
+	if (elementCount > 4294967295 / elementCount)
+		return (NULL);
+	a = malloc(elementCount * elementSize);
+	if (a == NULL)
+		return (NULL);
+	while (i < (elementCount * elementSize))
+	{
+		a[i] = 0;
+		i++;
+	}
+	return (a);
 }

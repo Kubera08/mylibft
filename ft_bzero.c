@@ -6,11 +6,13 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:54:59 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/11 19:19:44 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/23 17:06:35 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
 	int		i;
 	char	*a;

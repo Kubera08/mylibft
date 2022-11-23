@@ -6,24 +6,24 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 19:17:13 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/21 12:51:10 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:16:56 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void * ft_memchr( const void * memoryBlock, int searchedChar, size_t size )
+void	*ft_memchr( const void *memoryBlock, int searchedChar, size_t size )
 {
-    unsigned char *place;
-    size_t  i;
+	unsigned char	*place;
+	size_t			i;
 
-    place = (unsigned char *) memoryBlock;
-    i = 0;
-    while (i < size)
-    {
-        if(place[i] == (unsigned char) searchedChar)
-            return (&place[i]);    
-    i++;
-    }
-    return (NULL);
+	place = (unsigned char *) memoryBlock;
+	i = 0;
+	while (i < size)
+	{
+		if (place[i] == (unsigned char) searchedChar)
+			return (&place[i]);
+	i++;
+	}
+	return (NULL);
 }

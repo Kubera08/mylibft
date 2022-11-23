@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 13:26:45 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/22 16:00:32 by abeaudui         ###   ########.fr       */
+/*   Created: 2022/11/23 15:14:34 by abeaudui          #+#    #+#             */
+/*   Updated: 2022/11/23 15:46:33 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int	i;
+	t_list	*stock;
 
-	i = 0;
-	while (str[i])
+	while (*lst)
 	{
-		if (str[i] == (char)c)
-			return ((char *)&str[i]);
-		i++;
+		stock = (*lst)-> next;
+		del((*lst)-> content);
+		free(*lst);
+		*lst = stock;
 	}
-	if (str[i] == '\0' && c == '\0')
-		return ((char *) &str[i]);
-	return (NULL);
 }

@@ -6,22 +6,22 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:14:05 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/13 11:53:13 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:18:44 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#include <stddef.h>
 void	*ft_memset(void *str, int c, size_t len)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*string;
-	char a;
+	char			a;
 
 	a = c;
-	string = (unsigned char *)str;
+	string = (unsigned char *) str;
 	i = 0;
-	while(i < len)
+	while (i < len)
 	{	
 		string[i] = a;
 		i++;

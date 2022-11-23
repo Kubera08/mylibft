@@ -6,17 +6,17 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:23:22 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/16 12:24:14 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:53:49 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
-	int	i;
+	int		i;
 	char	*new;
-	int	len;
+	int		len;
 
 	i = 0;
 	len = 0;

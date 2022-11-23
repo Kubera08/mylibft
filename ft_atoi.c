@@ -6,11 +6,13 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 12:06:46 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/13 13:02:15 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/23 17:06:51 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+#include "libft.h"
+
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	boite;
@@ -19,7 +21,7 @@ int	ft_atoi(char *str)
 	i = 0;
 	boite = 1;
 	num = 0;
-	while ((str[i] >= 9 && str[i] <= 13 )|| str[i] == 32)
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	if (str[i] == '-')
 		boite = -1;

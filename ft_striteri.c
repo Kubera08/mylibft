@@ -6,18 +6,20 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:54:01 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/16 12:55:57 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:01:34 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-    int i;
+#include "libft.h"
 
-    i = 0;
-    while (s[i])
-    {
-        (*f)(i, &(s[i]));
-        i++;
-    }
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		(*f)(i, &(s[i]));
+		i++;
+	}
 }

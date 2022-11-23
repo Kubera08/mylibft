@@ -6,16 +6,16 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:27:05 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/09 13:41:22 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:43:52 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-int ft_toupper(int let)
+int	ft_toupper(int let)
 {
-    if (let <= 122 && let >= 97)
-        return(let - 32);
-    else
-        return(let);
+	if (let <= 122 && let >= 97)
+		return (let - 32);
+	else
+		return (let);
 }
-
