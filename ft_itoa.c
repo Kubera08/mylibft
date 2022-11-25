@@ -6,7 +6,7 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:16:47 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/23 16:52:15 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/25 17:55:17 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_count(int n)
 
 	i = 0;
 	if (n < 0)
-		n = n * -1; 
+		n = n * -1;
 	while (n != 0)
 	{
 		n = n / 10;
@@ -34,7 +34,7 @@ static int	ft_fill(char *tab, int count, int i, long int longn)
 	{
 		tab[0] = '-';
 		i++;
-		longn = longn * -1; 
+		longn = longn * -1;
 	}
 	tab[count] = '\0';
 	while (count > i)
@@ -56,7 +56,7 @@ char	*ft_itoa(int n)
 	longn = n;
 	count = ft_count(longn);
 	i = 0;
-	if (longn < 0 || count == 0) 
+	if (longn < 0 || count == 0)
 		count++;
 	tab = malloc(sizeof(char) * (count + 1));
 	if (!tab)

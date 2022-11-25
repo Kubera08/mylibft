@@ -6,7 +6,7 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:10:10 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/25 17:21:06 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/25 17:57:50 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnstr(const char	*str, const char *to_find, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	
+
 	i = 0;
 	if ((!str || !to_find) && len == 0)
 		return (NULL);
@@ -25,14 +25,13 @@ char	*ft_strnstr(const char	*str, const char *to_find, size_t len)
 	while (str[i] && i < len)
 	{
 		j = 0;
-		
-		if(str[i] == to_find[j])
+		if (str[i] == to_find[j])
 		{
 			while (str[i + j] == to_find[j] && i + j < len)
 			{
 				j++;
-				if(to_find[j] == 0)
-					return((char *)(&str[i]));
+				if (to_find[j] == 0)
+					return ((char *)(&str[i]));
 			}
 		}
 	i++;

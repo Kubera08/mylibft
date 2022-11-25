@@ -6,13 +6,13 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:26:55 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/23 16:57:43 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/25 17:44:48 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	occurence(const char *str, int c) 
+static int	occurence(const char *str, int c)
 {
 	int	n;
 	int	i;
@@ -27,10 +27,10 @@ static int	occurence(const char *str, int c)
 		}
 		i++;
 	}
-	return(n);
+	return (n);
 }
 
-char *ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
 	int	i;
 	int	o;
@@ -39,12 +39,12 @@ char *ft_strrchr(const char *str, int c)
 	i = 0;
 	while (str[i])
 	{
-		if(str[i] == (char)c)
+		if (str[i] == (char)c)
 		{
 			o++;
-			if ( o == occurence(str, c))
+			if (o == occurence(str, c))
 			{
-				return((char *)&str[i]);
+				return ((char *)&str[i]);
 			}
 		}
 		i++;

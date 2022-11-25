@@ -6,7 +6,7 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 10:43:49 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/23 16:54:34 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/25 17:58:35 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		tab = malloc(sizeof(char) * 1);
 		if (!tab)
- 			return(NULL);
+			return (NULL);
 		tab[i] = '\0';
-		return(tab);
+		return (tab);
 	}
 	tab = malloc(sizeof(char) * (max(s, len, (int)start) + 1));
 	if (!tab)
-		return(NULL);
-	while(s[start] && i < len)
+		return (NULL);
+	while (s[start] && i < len)
 	{
 		tab[i] = s[start];
 		i++;
@@ -51,4 +51,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	tab[i] = '\0';
 	return (tab);
 }
-
