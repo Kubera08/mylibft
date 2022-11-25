@@ -6,87 +6,84 @@
 /*   By: abeaudui <abeaudui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:25:52 by abeaudui          #+#    #+#             */
-/*   Updated: 2022/11/23 16:59:27 by abeaudui         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:23:08 by abeaudui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_countword(const char *s, char c)
+int	ft_countword(char *s, char c)
 {
 	int	word;
 	int	check;
+	int	i;
 
 	word = 0;
 	check = 0;
-	while (*s == c)
-		s++;
-	while (*s)
+	i = 0;
+	while (s[i] == c && s[i] != '\0')
+		i++;
+	while (s[i])
 	{
-		if (*s != c && check == 0)
+		if (s[i] != c && check == 0)
 		{
 			check = 1;
 			word++;
 		}
-		else if (*s == c)
+		else if (s[i] == c)
 			check = 0;
-		s++;
+		i++;
 	}
 	return (word);
 }
 
-char	*tab_filler(char const *s, int i, char c)
+static char     *tab_filler(char const *s, char c)
 {
-	char	*wordintab;
-	int		letter;
-	int		j;
-	int		k;
+        int     i;
+        int     y;
+        char    *str;
 
-	letter = 0;
-	j = 0;
-	k = i;
-	while (s[k] != c && s[k])
-	{
-		letter++;
-		k++;
-	}
-	wordintab = malloc(sizeof(char) * letter + 1);
-	if (!wordintab)
-		return (NULL);
-	while (s[i] != c && s[i])
-	{
-		wordintab[j] = s[i];
-		j++;
-		i++;
-	}
-	wordintab[j] = '\0';
-	return (wordintab);
+        i = 0;
+        y = 0;
+        while (s[y] && s[y] != c)
+                y++;
+        str = malloc(sizeof(char) * (y + 1));
+        if (!str)
+                return (NULL);
+        while (s[i] && s[i] != c)
+        {
+                str[i] = s[i];
+                i++;
+        }
+        str[i] = '\0';
+        return (str);
 }
 
-char	**ft_split(char const *s, char c)
-{
-	int			i;
-	int			j;
-	char		**tab;
 
-	i = 0;
-	j = 0;
-	if (!s)
-		return (NULL);
-	tab = malloc(sizeof(char *) * (ft_countword(s, c) + 1));
-	if (!tab)
-		return (NULL);
-	while (s[i] != '\0' && s[i] == c)
-		i++;
-	while (s[i] && j < ft_countword(s, c))
-	{
-		tab[j] = tab_filler(s, i, c);
-		while (s[i] != c && s[i])
-			i++;
-		while (s[i] == c && s[i])
-			i++;
-		j++;
-	}
-	tab[j] = NULL;
-	return (tab);
+char **ft_split(char const *s, char c)
+{
+        char    **str;
+        int     i;
+        int     word;
+        int     y;
+
+        i = 0;
+        y = 0;
+        if (!s)
+                return (NULL);
+        word = ft_countword((char *)s, c);
+        str = malloc(sizeof(char *) * (word + 1));
+        if (!str)
+                return (NULL);
+        str[word] = NULL;
+        while (s[i])
+        {
+                if (((i == 0) || (s[i - 1] == c)) && (y < word) && (s[i] != c))
+                {
+                        str[y] = tab_filler(&s[i], c);
+                        y++;
+                }
+                i++;
+        }
+        return (str);
 }
